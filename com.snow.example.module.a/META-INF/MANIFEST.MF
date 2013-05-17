@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: A
+Bundle-SymbolicName: com.snow.example.module.a
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.snow.example.module.a.Activator
+Bundle-Vendor: SNOW
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.snow.example.module.a.accessible,
+ com.snow.example.module.a.internal;x-internal:=true,
+ com.snow.example.module.a.internalfriends;x-friends:="com.snow.example.module.b"

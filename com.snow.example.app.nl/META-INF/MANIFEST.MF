@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nl
+Bundle-SymbolicName: com.snow.example.app.nl
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SNOW
+Fragment-Host: com.snow.example.app;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: C
+Bundle-SymbolicName: com.snow.example.module.c;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.snow.example.module.c.Activator
+Bundle-Vendor: SNOW
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.snow.example.module.ui;bundle-version="1.0.0",
+ org.springframework.core;bundle-version="2.5.6",
+ org.springframework.beans;bundle-version="2.5.6",
+ org.springframework.context;bundle-version="2.5.6"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.snow.example.module.c.dialog,
+ com.snow.example.module.c.status

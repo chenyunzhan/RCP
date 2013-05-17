@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Languages"
+            id="com.snow.example.app.language.commands.category">
+      </category>
+      <command
+            categoryId="com.snow.example.app.language.commands.category"
+            id="com.snow.example.app.language.commands.language"
+            name="Language">
+         <commandParameter
+               id="com.snow.example.app.language.locale"
+               name="locale"
+               optional="true">
+         </commandParameter>
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.snow.example.app.language.LanguageSwitchHandler"
+            commandId="com.snow.example.app.language.commands.language">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:help?after=additions">
+         <menu
+               label="Language"
+               mnemonic="L"
+               id="com.snow.example.app.language.menus.languages">
+            <command
+                  commandId="com.snow.example.app.language.commands.language"
+                  icon="icons/cn.png"
+                  id="com.snow.example.app.language.menus.zh"
+                  label="chinese">
+               <parameter
+                     name="com.snow.example.app.language.locale"
+                     value="zh_CN">
+               </parameter>
+            </command>
+            <command
+                  commandId="com.snow.example.app.language.commands.language"
+                  icon="icons/us.png"
+                  id="com.snow.example.app.language.menus.us"
+                  label="english">
+               <parameter
+                     name="com.snow.example.app.language.locale"
+                     value="en_US">
+               </parameter>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+   
+</plugin>

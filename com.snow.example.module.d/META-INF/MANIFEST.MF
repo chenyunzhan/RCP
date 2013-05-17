@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: D
+Bundle-SymbolicName: com.snow.example.module.d;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.snow.example.module.d.Activator
+Bundle-Vendor: SNOW
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: com.snow.example.module.d.registry

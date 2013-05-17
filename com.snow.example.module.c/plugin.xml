@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.snow.example.module.c.viewpart.MasterViewPart"
+            id="com.snow.example.module.c.viewpart.MasterViewPart"
+            name="Master ViewPart">
+      </view>
+      <view
+            class="com.snow.example.module.c.viewpart.SlaveViewPart"
+            id="com.snow.example.module.c.viewpart.SlaveViewPart"
+            name="Slave ViewPart">
+      </view>
+      <view
+            class="com.snow.example.module.c.viewpart.UserViewPart"
+            id="com.snow.example.module.c.viewpart.UserViewPart"
+            name="User ViewPart">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.snow.example.module.c.perspective.ElementPerspective"
+            id="com.snow.example.module.c.perspective.ElementPerspective"
+            name="Element Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.snow.example.module.c.editorpart.ElementEditorPart"
+            contributorClass="com.snow.example.module.c.action.EditorPartActionExample"
+            id="com.snow.example.module.c.editorpart.ElementEditorPart"
+            name="Element EditorPart">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="this is a ActionSet"
+            id="com.snow.example.module.c.actionset"
+            label="ActionSet"
+            visible="true">
+         <menu
+               id="com.snow.example.module.c.actionsets.menu"
+               label="ActionSets Menu"
+               path="additions">
+            <separator
+                  name="content">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="com.snow.example.module.c.action.delegate.WindowActionDelegateExample"
+               definitionId="com.snow.example.module.c.commands.exampleActionCommand"
+               id="com.snow.example.module.c.action.delegate.WindowActionDelegateExample"
+               label="ActionSets Action"
+               menubarPath="com.snow.example.module.c.actionsets.menu/content"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.snow.example.module.c.viewpart.contributton"
+            targetID="com.snow.example.module.c.viewpart.MasterViewPart">
+         <menu
+               id="com.snow.example.module.c.viewpart.contribution.menu"
+               label="ViewContribution Menu"
+               path="additions">
+            <separator
+                  name="content">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="com.snow.example.module.c.action.delegate.ViewActionDelegateExample"
+               id="com.snow.example.module.c.action.delegate.ViewActionDelegateExample"
+               label="ViewContribution Action"
+               menubarPath="com.snow.example.module.c.viewpart.contribution.menu/content"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="com.snow.example.module.c.editorpart.contribution"
+            targetID="com.snow.example.module.c.editorpart.ElementEditorPart">
+         <menu
+               id="com.snow.example.module.c.editorpart.contribution.menu"
+               label="EditorContribution Menu"
+               path="additions">
+            <separator
+                  name="additions">
+            </separator>
+            <separator
+                  name="content">
+            </separator>
+         </menu>
+         <action
+               class="com.snow.example.module.c.action.delegate.EditorActionDelegateExample"
+               definitionId="com.snow.example.module.c.commands.exampleEditorActionCommand"
+               id="com.snow.example.module.c.action.delegate.EditorActionDelegateExample"
+               label="EditorContribution Action"
+               menubarPath="com.snow.example.module.c.editorpart.contribution.menu/content"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </editorContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="this is a Example Command Category"
+            id="com.snow.example.module.c.commands.category"
+            name="Example Category">
+      </category>
+      <command
+            description="this is a Action Command"
+            id="com.snow.example.module.c.commands.exampleActionCommand"
+            name="Action Command">
+      </command>
+      <command
+            description="this is a Editor Action Comand"
+            id="com.snow.example.module.c.commands.exampleEditorActionCommand"
+            name="Editor Action Command">
+      </command>
+      <keyBinding></keyBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.snow.example.module.c.commands.exampleActionCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+ALT+A">
+      </key>
+      <key
+            commandId="com.snow.example.module.c.commands.exampleEditorActionCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+ALT+E">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.snow.example.module.c.preferences.SamplePreferencePage"
+            id="com.snow.example.module.c.preferences.SamplePreferencePage"
+            name="Sample Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.snow.example.module.c.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+</plugin>
